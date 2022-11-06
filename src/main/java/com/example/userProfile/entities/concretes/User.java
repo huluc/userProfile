@@ -6,66 +6,29 @@ import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
 public class User {
+	@JsonProperty("id")
 	private UUID id;
+
 	@NotBlank
+	@JsonProperty("userName")
 	private String userName;
+
+	@JsonProperty("password")
 	@NotBlank
 	private String password;
+
+	@JsonProperty("name")
 	private String firstName;
+
+	@JsonProperty("lastName")
 	private String lastName;
-
-	public User() {
-	}
-
-	public User(@JsonProperty("id") UUID id, @JsonProperty("userName") String userName,
-			@JsonProperty("password") String password, @JsonProperty("name") String firstName,
-			@JsonProperty("lastName") String lastName) {
-		this.id = id;
-		this.userName = userName;
-		this.password = password;
-		this.firstName = firstName;
-		this.lastName = lastName;
-	}
-
-	public UUID getId() {
-		return id;
-	}
-
-	public void setId(UUID id) {
-		this.id = id;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
 }

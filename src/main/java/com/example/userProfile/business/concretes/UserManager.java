@@ -18,7 +18,7 @@ public class UserManager implements UserService {
 	private UserRepository userRepository;
 
 	@Autowired
-	public UserManager(@Qualifier("inMemoryRepository") UserRepository userRepository) {
+	public UserManager(@Qualifier("postgres") UserRepository userRepository) {
 		this.userRepository = userRepository;
 	}
 
